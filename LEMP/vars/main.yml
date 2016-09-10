@@ -1,0 +1,7 @@
+---
+ansible_ssh_user: root
+dev_app_mysql_db: time_trax
+dev_app_mysql_host: localhost
+dev_app_mysql_user: root
+dev_app_mysql_pass: root
+#seed_app_mysql_temp_file: /tmp/api.sql

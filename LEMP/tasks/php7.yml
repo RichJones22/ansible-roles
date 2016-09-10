@@ -1,0 +1,35 @@
+---
+- name: Ensure PPAs
+  apt_repository: repo="{{ item }}"
+  with_items:
+    - ppa:ondrej/php
+    - ppa:ansible/ansible
+  ignore_errors: True
+
+- apt: update_cache=yes upgrade=yes
+
+- name: Install packages for PHP7
+  action: apt pkg={{ item }} state=present
+  with_items:
+    - vim
+    - git
+    - wget
+    - zip
+    - unzip
+    - htop
+    - php7.0-common
+    - php7.0
+    - php7.0-dev
+    - libreadline-dev
+    - php7.0-readline
+    - php7.0-gd
+    - php7.0-curl
+    - php7.0-mysql
+    - php-apc
+    - php-soap
+    - php7.0-cli
+    - php7.0-intl
+    - php7.0-mcrypt
+    - php7.0-fpm
+    - php7.0-mbstring
+    - php7.0-soap
